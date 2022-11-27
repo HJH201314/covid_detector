@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#FF0000">
+    <!--可以在此设置真正的背景drawable-->
+    <!--<item android:drawable="@drawable/background" />-->
+
+    <!--mask层确保涟漪效果在当前的drawable范围内-->
+    <!--item中的drawable属性是必须的,任意即可-->
+    <item android:id="@android:id/mask"
+        android:drawable="@android:color/white" />
+</ripple>

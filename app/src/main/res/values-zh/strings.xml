@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID诊断</string>
+    <string name="main_tabs_item_detect">检测</string>
+    <string name="main_tabs_item_me">我的</string>
+    <string name="main_tabs_item_record">记录</string>
+    <string name="detect_text_tip">请选择一张图片：</string>
+    <string name="detect_btn_select">选择</string>
+    <string name="record_tv_detail">详情</string>
+    <string name="toolbar_title">COVID诊断</string>
+    <string name="method_xray">X光模式</string>
+    <string name="method_ct">CT模式</string>
+    <string name="method_cough">咳嗽模式</string>
+    <string name="main_toolbar_menu_method">切换检测方式</string>
+</resources>

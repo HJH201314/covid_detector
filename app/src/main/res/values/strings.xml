@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">COVID Detector</string>
+    <string name="main_tabs_item_detect">Detect</string>
+    <string name="main_tabs_item_record">Record</string>
+    <string name="main_tabs_item_me">Me</string>
+    <string name="detect_text_tip">Choose an image…</string>
+    <string name="detect_btn_select">CHOOSE</string>
+    <string name="record_tv_detail">Detail</string>
+    <string name="toolbar_title">COVID Detector</string>
+    <string name="method_xray">X-ray Mode</string>
+    <string name="method_ct">CT Mode</string>
+    <string name="method_cough">Cough Mode</string>
+    <string name="main_toolbar_menu_method">Change Method</string>
+</resources>

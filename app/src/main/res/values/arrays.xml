@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="detect_methods">
+        <item>@string/method_xray</item>
+        <item>@string/method_ct</item>
+        <item>@string/method_cough</item>
+    </string-array>
+</resources>

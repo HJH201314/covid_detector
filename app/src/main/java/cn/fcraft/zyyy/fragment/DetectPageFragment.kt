@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import cn.fcraft.zyyy.ObjectBox
+import cn.fcraft.zyyy.api.DetectApi
 import cn.fcraft.zyyy.databinding.FragmentDetectPageBinding
 import cn.fcraft.zyyy.entity.DiagnoseRecord
 import kotlinx.coroutines.*
@@ -37,7 +38,8 @@ class DetectPageFragment : Fragment() {
                 RecordListFragment.refreshList()
 
                 lifecycleScope.launch {
-                    val result = submitImage()
+                    val result = DetectApi.detectXray(it)
+                    //val result = submitImage()
                     binding.progress.visibility = View.GONE
                     binding.tvFile.text = result.getOrNull()
                 }
@@ -56,14 +58,13 @@ class DetectPageFragment : Fragment() {
     }
 
     private fun initializeView() {
-        binding.btnChoose.setOnClickListener() {
+        binding.btnChoose.setOnClickListener {
             docProviderLauncher.launch("image/*")
         }
     }
 
     private suspend fun submitImage(): Result<String> {
         return withContext(Dispatchers.IO) {
-            delay(1000)
             val client = OkHttpClient()
 
             val request = Request.Builder()
@@ -71,7 +72,7 @@ class DetectPageFragment : Fragment() {
                 .build()
             var result: String
             client.newCall(request).execute().use { response ->
-                if (!response.isSuccessful) throw IOException("Unexpected code $response")
+                if (!response.isSuccessful) Result.success("failed")
 
                 for ((name, value) in response.headers) {
                     Log.d("header", "$name: $value")

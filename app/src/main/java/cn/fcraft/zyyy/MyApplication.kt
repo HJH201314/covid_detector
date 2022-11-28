@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import cn.fcraft.zyyy.entity.DiagnoseRecord
 import cn.fcraft.zyyy.entity.MyObjectBox
+import com.tencent.mmkv.MMKV
 import io.objectbox.Box
 import io.objectbox.BoxStore
 
@@ -11,6 +12,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         ObjectBox.init(this)
+        MMKV.initialize(this)
     }
 }
 

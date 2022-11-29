@@ -11,4 +11,12 @@
     <string name="method_ct">CT Mode</string>
     <string name="method_cough">Cough Mode</string>
     <string name="main_toolbar_menu_method">Change Method</string>
+    <string name="dialog_title_success">Detection Result</string>
+    <string name="dialog_subtitle_success">For reference only, not medical diagnosis.</string>
+    <string name="type_normal">Normal</string>
+    <string name="type_covid19">COVID-19</string>
+    <string name="type_viral">Viral Pneumonia</string>
+    <string name="type_default">No Findings</string>
+    <string name="type_opacity">Lung Opacity</string>
+    <string name="toolbar_subtitle_record">%1$d records</string>
 </resources>

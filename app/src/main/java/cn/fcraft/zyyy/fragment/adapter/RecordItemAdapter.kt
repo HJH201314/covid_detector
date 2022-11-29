@@ -50,10 +50,14 @@ class RecordItemAdapter() : ListAdapter<DiagnoseRecord, RecordItemAdapter.ViewHo
         holder.card.setOnLongClickListener() {
             AlertDialog.Builder(context).apply {
                 setTitle("请选择操作")
-                setItems(arrayOf("删除记录")) { _, menu_pos ->
+                setItems(arrayOf("删除记录", "删除全部记录")) { _, menu_pos ->
                     when(menu_pos) {
                         0 -> {
                             ObjectBox.recordBox.remove(item.id)
+                            this@RecordItemAdapter.submitList(ObjectBox.recordBox.all)
+                        }
+                        1 -> {
+                            ObjectBox.recordBox.removeAll()
                             this@RecordItemAdapter.submitList(ObjectBox.recordBox.all)
                         }
                     }

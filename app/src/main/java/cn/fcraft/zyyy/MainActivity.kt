@@ -9,8 +9,10 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.get
 import cn.fcraft.zyyy.databinding.ActivityMainBinding
 import cn.fcraft.zyyy.enum.DetectMethod
+import cn.fcraft.zyyy.fragment.RecordListFragment
 import cn.fcraft.zyyy.fragment.adapter.MainFragmentAdapter
 import com.blankj.utilcode.util.ResourceUtils
+import com.blankj.utilcode.util.StringUtils
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -82,11 +84,13 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         if (tab?.position == 0) {
             applyDetectMethod()
         } else {
-            binding.toolbar.subtitle = ""
+            binding.toolbar.subtitle = String.format(resources.getString(R.string.toolbar_subtitle_record), ObjectBox.recordBox.count())
         }
     }
 
     override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
-    override fun onTabReselected(tab: TabLayout.Tab?) {}
+    override fun onTabReselected(tab: TabLayout.Tab?) {
+        RecordListFragment.refreshList()
+    }
 }

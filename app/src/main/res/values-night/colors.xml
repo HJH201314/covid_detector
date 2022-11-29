@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ant_green">#FF49AA19</color>
+    <color name="ant_blue">#FF1678DC</color>
+    <color name="ant_orange">#FFD89614</color>
+    <color name="ant_red">#FFDC4446</color>
+</resources>

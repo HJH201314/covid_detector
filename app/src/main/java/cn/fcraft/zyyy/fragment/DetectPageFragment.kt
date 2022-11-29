@@ -49,7 +49,8 @@ class DetectPageFragment : Fragment() {
                     val resultStrRes = when(DetectApi.findBestResult(result)) {
                         "normal" -> R.string.type_normal
                         "pneumonia" -> R.string.type_viral
-                        "covid19" -> R.string.type_covid19
+                        "covid" -> R.string.type_covid19
+                        "opacity" -> R.string.type_opacity
                         "[default]" -> R.string.type_default
                         else -> R.string.type_default
                     }
@@ -67,6 +68,7 @@ class DetectPageFragment : Fragment() {
                                     setTextColor(ContextCompat.getColor(context, when(resultStrRes) {
                                         R.string.type_normal -> R.color.ant_green
                                         R.string.type_viral -> R.color.ant_orange
+                                        R.string.type_opacity -> R.color.ant_orange
                                         R.string.type_covid19 -> R.color.ant_red
                                         R.string.type_default -> R.color.ant_blue
                                         else -> R.color.ant_blue

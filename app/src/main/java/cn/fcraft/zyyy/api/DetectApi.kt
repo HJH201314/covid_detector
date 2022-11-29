@@ -24,7 +24,7 @@ class DetectApi {
 
                 val json = JSONUtil.createObj()
                 json.set("image", Base64.encodeToString(UriUtils.uri2Bytes(uri), Base64.DEFAULT))
-                json.set("top_num", 4)
+                json.set("top_num", 5)
 
                 val client = OkHttpClient()
                 val request = Request.Builder()
